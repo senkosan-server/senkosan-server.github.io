@@ -1,0 +1,961 @@
+/* ============================================================
+   senkosan.team Wiki — тёмная тема в стилистике сайта
+   Палитра, типографика и плотность повторяют основной сайт:
+   JetBrains Mono, оранжевый акцент, тонкие рамки, без градиентов.
+   ============================================================ */
+
+:root,
+[data-md-color-scheme='slate'][data-md-color-primary] {
+  --bg: #090a0d;
+  --bg-soft: #0c0e12;
+  --panel: #0d0f14;
+  --panel-2: #161a21;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --text: #eef0f2;
+  --muted: #9aa2ab;
+  --muted-2: #77808a;
+  --accent: #ff8a2a;
+  --accent-light: #ffa04f;
+  --accent-soft: rgba(255, 138, 42, 0.14);
+  --accent-line: rgba(255, 138, 42, 0.38);
+
+  --md-text-font: "JetBrains Mono";
+  --md-code-font: "JetBrains Mono";
+
+  --md-primary-fg-color: var(--accent);
+  --md-primary-fg-color--light: var(--accent-light);
+  --md-primary-fg-color--dark: #d96f16;
+  --md-primary-bg-color: var(--bg);
+  --md-primary-bg-color--light: var(--bg-soft);
+  --md-accent-fg-color: var(--accent);
+  --md-accent-fg-color--transparent: var(--accent-soft);
+  --md-accent-bg-color: var(--bg);
+  --md-accent-bg-color--light: var(--bg-soft);
+
+  --md-default-bg-color: var(--bg);
+  --md-default-bg-color--light: var(--bg-soft);
+  --md-default-bg-color--lighter: rgba(255, 255, 255, 0.03);
+  --md-default-bg-color--lightest: rgba(255, 255, 255, 0.02);
+  --md-default-fg-color: var(--text);
+  --md-default-fg-color--light: var(--muted);
+  --md-default-fg-color--lighter: var(--muted-2);
+  --md-default-fg-color--lightest: var(--line);
+
+  --md-typeset-color: var(--muted);
+  --md-typeset-a-color: var(--accent);
+  --md-typeset-table-color: var(--line);
+  --md-typeset-table-color--light: rgba(255, 255, 255, 0.035);
+  --md-typeset-kbd-color: rgba(255, 255, 255, 0.06);
+  --md-typeset-kbd-accent-color: var(--accent-soft);
+  --md-typeset-kbd-border-color: var(--line-strong);
+  --md-typeset-mark-color: rgba(255, 138, 42, 0.28);
+
+  --md-code-fg-color: var(--text);
+  --md-code-bg-color: var(--panel);
+  --md-code-bg-color--light: rgba(255, 255, 255, 0.03);
+  --md-code-bg-color--lighter: rgba(255, 255, 255, 0.02);
+  --md-code-hl-color: var(--accent-soft);
+  --md-code-hl-number-color: var(--accent-light);
+  --md-code-hl-special-color: #ffb36b;
+  --md-code-hl-function-color: var(--text);
+  --md-code-hl-constant-color: #c7cbd0;
+  --md-code-hl-keyword-color: var(--accent);
+  --md-code-hl-string-color: #b6d39a;
+  --md-code-hl-name-color: var(--text);
+  --md-code-hl-operator-color: var(--muted);
+  --md-code-hl-punctuation-color: var(--muted);
+  --md-code-hl-comment-color: var(--muted-2);
+  --md-code-hl-generic-color: var(--muted);
+  --md-code-hl-variable-color: var(--muted);
+
+  --md-admonition-fg-color: var(--muted);
+  --md-admonition-bg-color: var(--panel);
+  --md-footer-bg-color: var(--bg);
+  --md-shadow-z1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --md-shadow-z2: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --md-shadow-z3: 0 12px 32px rgba(0, 0, 0, 0.55);
+
+  /* Фон страницы. По умолчанию прозрачный: вики встроена в сайт, и сквозь
+     неё видно звёзды и виньетку сайта. Когда вики открыли отдельно,
+     assets/embed.js добавляет is-standalone и фон становится своим. */
+  --page-bg: transparent;
+}
+
+/* Второй селектор нужен из-за specificity: на body висят те же атрибуты
+   темы, что и на html, и без него переменная перебивается ими. */
+html.is-standalone,
+html.is-standalone [data-md-color-scheme] {
+  --page-bg: var(--bg);
+}
+
+html {
+  /* color-scheme задаёт цвет полотна на случай, когда фон документа
+     прозрачный: иначе часть браузеров рисует под ним белое. */
+  color-scheme: dark;
+  background: var(--page-bg);
+  scrollbar-color: #22262d var(--bg);
+  scrollbar-width: thin;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--md-text-font), ui-monospace, "Cascadia Mono", monospace;
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Зерно поверх текста: на сайте этот слой лежит под вёрсткой, сквозь
+   iframe его не видно, поэтому повторяем здесь. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--accent);
+  color: #1a1206;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22262d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- каркас страницы ---------- */
+
+/* Фон шапки, колонок и статьи - тот же, что у страницы: при встраивании
+   в сайт он прозрачный, а при отдельном открытии это #090a0d. */
+.md-header,
+.md-container,
+.md-main,
+.md-content {
+  background: var(--page-bg);
+}
+
+.md-header {
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+}
+
+/* 1320 = 220 навигация + 760 статья + 200 оглавление + зазоры. */
+.md-header__inner,
+.md-main__inner {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.md-header__title {
+  font-family: var(--md-text-font), ui-monospace, "Cascadia Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Навигация плоская, секций нет, поэтому тема прячет топик в шапке.
+   Если вернём секции, вернётся и префикс '// ' перед названием раздела. */
+.md-header__topic[data-md-component='header-topic']::before {
+  content: '// ';
+  color: var(--accent);
+}
+
+.md-header__button {
+  color: var(--muted);
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.md-header__button:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.md-sidebar {
+  background: var(--page-bg);
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--md-text-font), ui-monospace, "Cascadia Mono", monospace;
+}
+
+.md-sidebar--primary {
+  width: 220px;
+}
+
+/* На телефоне боковая колонка превращается в drawer и закрывает статью,
+   поэтому фон у неё остаётся непрозрачным. */
+@media screen and (max-width: 59.9375em) {
+  .md-sidebar--primary {
+    background: var(--bg);
+  }
+}
+
+/* Без вкладок навигация не поднимается в шапку и остаётся в колонке,
+   поэтому блок должен быть по высоте содержимого: иначе боковая линия
+   обрывается на первых 2rem. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar {
+    height: auto;
+  }
+}
+
+.md-sidebar--secondary {
+  width: 200px;
+  background: transparent;
+  border-right: 0;
+  border-left: 1px solid var(--line);
+}
+
+/* На страницах без оглавления правая колонка пуста — не занимаем место. */
+.md-sidebar--secondary:not([hidden]):not(:has(li)) {
+  display: none;
+}
+
+.md-sidebar--secondary .md-nav__link {
+  padding: 4px 12px;
+  font-size: 12.5px;
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+.md-sidebar__inner {
+  padding-block: 20px;
+}
+
+/* ---------- ветка SenkoPets: раскрыта всегда ---------- */
+
+/* Тема прячет вложенный список и показывает его только по чекбоксу.
+   У секции своя страница, поэтому список раскрыт в любой момент. */
+.md-sidebar--primary .md-nav--primary .md-nav__toggle ~ .md-nav,
+.md-sidebar--primary .md-nav--primary .md-nav__toggle:checked ~ .md-nav,
+.md-sidebar--primary .md-nav--primary .md-nav__toggle.md-toggle--indeterminate ~ .md-nav {
+  grid-template-rows: minmax(0.4rem, 1fr);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Переключатель со стрелкой убираем: клик по названию ведёт на страницу
+   секции, а не сворачивает список. Селектор через прямого потомка списка,
+   чтобы не задеть свёртку оглавления активной страницы в drawer. */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container > label.md-nav__link {
+  display: none;
+}
+
+/* Кликается вся строка секции, а не только слово: ссылка растягивается
+   через ::after на весь контейнер - так же, как сделано для кнопок
+   разделов в тексте страницы. */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container {
+  position: relative;
+}
+
+/* Строка секции должна быть неотличима от обычного пункта меню: свои
+   отступы и рамку оставляем контейнеру, а ссылке внутри - нет. Иначе
+   текст сдвинут вправо, а строка выше остальных на 12px. */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container > a.md-nav__link {
+  padding: 0;
+  border-left: 0;
+  background: none;
+  color: inherit;
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container > a.md-nav__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* Подсветка при наведении и фокусе - на всю строку, как у обычного пункта. */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container:hover,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container:focus-within {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container:hover > a.md-nav__link,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container:focus-within > a.md-nav__link {
+  color: var(--text);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__item--active,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--active > .md-nav__container:hover > a.md-nav__link {
+  color: var(--accent);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--nested .md-nav__container:focus-within > a.md-nav__link:focus-visible {
+  outline: none;
+}
+
+.md-drawer {
+  background: var(--bg-soft);
+  border-right: 1px solid var(--line);
+}
+
+.md-overlay {
+  background: rgba(9, 10, 13, 0.72);
+}
+
+/* Брендинг темы внутри Wiki не нужен: всё уже есть в шапке сайта. */
+.md-footer,
+.md-nav__title,
+.md-header__button.md-logo,
+.md-nav__button.md-logo,
+.md-header__topic:not([data-md-component='header-topic']) {
+  display: none;
+}
+
+.md-nav__link {
+  color: var(--muted);
+  border-left: 2px solid transparent;
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 6px 16px;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.md-nav__link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.md-nav--primary .md-nav__item--active > .md-nav__link,
+.md-nav--primary .md-nav__item--active > .md-nav__link:focus,
+.md-nav--primary .md-nav__item--active > .md-nav__link:hover {
+  color: var(--accent);
+  background: var(--panel-2);
+  border-left-color: var(--accent);
+}
+
+/* «приподнятый» активный пункт: глубина задаётся тем же цветом, что и фон. */
+.md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+  background: var(--panel-2);
+  box-shadow: 0.4rem 0 0.4rem 0.4rem var(--panel-2), -0.4rem 0 0.4rem 0.4rem var(--panel-2);
+}
+
+/* ---------- поиск ---------- */
+
+.md-search__form {
+  height: 36px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-search__form:hover {
+  border-color: var(--line-strong);
+}
+
+.md-search__form:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-soft);
+}
+
+.md-search__input {
+  height: 36px;
+  color: var(--text);
+  caret-color: var(--accent);
+  font-family: var(--md-text-font), ui-monospace, "Cascadia Mono", monospace;
+  font-size: 13px;
+}
+
+.md-search__input::placeholder {
+  color: var(--muted-2);
+}
+
+.md-search__icon {
+  color: var(--muted-2);
+}
+
+.md-search__icon:hover {
+  color: var(--accent);
+}
+
+[dir] .md-search__output {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+  font-size: 13px;
+}
+
+.md-search-result__item {
+  box-shadow: 0 -1px 0 var(--line);
+}
+
+.md-search-result__link:hover,
+.md-search-result__link:focus {
+  background-color: var(--accent-soft);
+}
+
+.md-search-result__title {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.md-search-result__body {
+  color: var(--muted);
+}
+
+.md-search-result__more > summary > div {
+  color: var(--accent);
+}
+
+.md-search-result__more[open] > summary {
+  background-color: var(--bg-soft);
+}
+
+/* В выдаче заголовок и сниппет масштабируются под размер выпадающего списка. */
+.md-search-result__article h1 {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.md-search-result__article p {
+  margin: 0 0 4px;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* ---------- контент ---------- */
+
+/* Статья центрируется в колонке: правила отступов у .md-content__inner
+   в теме заданы через высокие селекторы, поэтому центруем контейнером. */
+.md-content {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+[dir] .md-sidebar:not([hidden]) ~ .md-content > .md-content__inner {
+  margin-inline: 0;
+}
+
+.md-content__inner {
+  width: 100%;
+  max-width: 760px;
+  padding: 34px 24px 64px;
+}
+
+.md-typeset {
+  color: var(--muted);
+  font-family: var(--md-text-font), ui-monospace, "Cascadia Mono", monospace;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--text);
+  font-family: var(--md-text-font), ui-monospace, "Cascadia Mono", monospace;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h1 {
+  margin: 0 0 22px;
+  font-size: clamp(26px, 4vw, 34px);
+}
+
+.md-typeset h2 {
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 22px;
+}
+
+.md-typeset h3 {
+  margin: 24px 0 8px;
+  font-size: 17px;
+}
+
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  margin: 20px 0 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.md-typeset p {
+  margin: 0 0 16px;
+}
+
+.md-typeset strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.md-typeset small {
+  color: var(--muted-2);
+}
+
+.md-typeset a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-line);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--accent-light);
+  border-bottom-color: var(--accent-light);
+}
+
+.md-typeset a.headerlink {
+  margin-left: 8px;
+  color: var(--muted-2);
+  border-bottom: 0;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.md-typeset h1:hover a.headerlink,
+.md-typeset h2:hover a.headerlink,
+.md-typeset h3:hover a.headerlink,
+.md-typeset h4:hover a.headerlink,
+.md-typeset h5:hover a.headerlink,
+.md-typeset h6:hover a.headerlink,
+.md-typeset a.headerlink:focus-visible {
+  opacity: 1;
+}
+
+.md-typeset a.headerlink:hover {
+  color: var(--accent);
+}
+
+.md-typeset ul,
+.md-typeset ol {
+  margin: 0 0 18px;
+  padding-left: 1.5em;
+}
+
+.md-typeset li {
+  margin: 5px 0;
+}
+
+.md-typeset li::marker {
+  color: var(--accent);
+}
+
+[dir='ltr'] .md-typeset blockquote,
+[dir='rtl'] .md-typeset blockquote {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border-inline-start: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--muted);
+}
+
+.md-typeset blockquote strong {
+  color: var(--text);
+}
+
+.md-typeset hr {
+  margin: 28px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.md-typeset kbd {
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+  font-family: var(--md-code-font), ui-monospace, "Cascadia Mono", monospace;
+}
+
+.md-typeset mark {
+  border-radius: 3px;
+  background-color: var(--md-typeset-mark-color);
+  color: var(--text);
+}
+
+.md-typeset code {
+  padding: 0.12em 0.38em;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel-2);
+  color: var(--text);
+  font-family: var(--md-code-font), ui-monospace, "Cascadia Mono", monospace;
+  font-size: 0.86em;
+  /* Длинные строки в кодовых врезках (пути, команды, сообщения) вместе со
+     своими полями и рамкой выпирают за колонку. anywhere ломает такой токен
+     по месту, короткие идентификаторы остаются целыми. */
+  overflow-wrap: anywhere;
+}
+
+.md-typeset pre {
+  margin: 20px 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: none;
+}
+
+.md-typeset pre code,
+.md-typeset pre > code {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.7;
+  /* Блок кода должен прокручиваться по горизонтали, а не обрезать строки.
+     Пока код внутри pre блочный, его переполнение не попадает в
+     прокручиваемую область pre - строка просто обрезается. Переносим код
+     в отдельную inline-бокс строку, и pre начинает скроллиться. */
+  display: inline-block;
+  vertical-align: top;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+
+.md-typeset .highlight {
+  background: transparent;
+}
+
+.md-typeset .md-clipboard {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel-2);
+  color: var(--muted);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.md-typeset .md-clipboard:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- кнопки разделов на странице плагина ---------- */
+
+/* Префикс .md-typeset обязателен: тема ставит спискам display: flow-root
+   через .md-typeset ul:not([hidden]) - по специфичности это сильнее. */
+.md-typeset .section-links {
+  margin: 24px 0 28px;
+}
+
+.md-typeset .section-links ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Внутри кнопок маркер списка только мешает, поэтому пункт - карточка,
+   а щёлкает по всей площади растянутая ссылка. */
+.md-typeset .section-links li {
+  position: relative;
+  margin: 0;
+  padding: 13px 16px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* Тема сдвигает пункты списка вправо на 1.25em через [dir] .md-typeset ul li -
+   селектор с dir сильнее, поэтому перебиваем его явно. */
+[dir] .md-typeset .section-links li {
+  margin: 0;
+}
+
+.md-typeset .section-links li:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+.md-typeset .section-links li:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.md-typeset .section-links a {
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.md-typeset .section-links a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.md-typeset .section-links a:hover {
+  color: var(--accent);
+}
+
+.md-typeset .section-links .note {
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.md-typeset table,
+.md-typeset table:not([class]) {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.md-typeset th,
+.md-typeset td,
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-typeset th {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.md-typeset tr:hover td {
+  background: var(--accent-soft);
+}
+
+.md-typeset figure {
+  margin: 20px 0;
+}
+
+.md-typeset img {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.md-typeset figcaption {
+  color: var(--muted-2);
+  font-size: 12.5px;
+}
+
+/* У admonition в теме заданы цвета отдельно для каждого типа,
+   поэтому селекторы должны быть не слабее .admonition.<type>. */
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset .admonition[class],
+.md-typeset details[class] {
+  border: 1px solid var(--line);
+  border-inline-start: 2px solid var(--accent);
+  border-radius: 6px;
+  background: var(--panel);
+  box-shadow: none;
+}
+
+.md-typeset .admonition-title,
+.md-typeset .admonition[class] > .admonition-title {
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.md-typeset .admonition[class] > .admonition-title::before {
+  background-color: var(--accent);
+}
+
+.md-typeset .admonition > *,
+.md-typeset details > * {
+  color: var(--muted);
+}
+
+.md-typeset summary {
+  color: var(--text);
+  cursor: pointer;
+}
+
+.md-typeset summary:hover {
+  color: var(--accent);
+}
+
+.md-typeset .task-list-item {
+  list-style: none;
+}
+
+.md-typeset [type='checkbox']:checked + .task-list-indicator::before {
+  background-color: var(--accent);
+}
+
+.md-typeset [type='checkbox']:not(:checked) + .task-list-indicator::before {
+  background-color: var(--muted-2);
+}
+
+.md-typeset .footnote {
+  border-top: 1px solid var(--line);
+  color: var(--muted-2);
+  font-size: 12.5px;
+}
+
+.md-typeset .md-content__button {
+  color: var(--muted-2);
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.md-typeset .md-content__button:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.md-button {
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.md-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.md-button--primary {
+  color: #1a1206;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.md-button--primary:hover {
+  color: #1a1206;
+  border-color: var(--accent-light);
+  background: var(--accent-light);
+}
+
+/* ---------- адаптив ---------- */
+
+/* Поля страницы на узких экранах задаёт сетка: 24px слева и справа,
+   столько же, сколько использует сайт. */
+@media screen and (max-width: 960px) {
+  .md-header__inner,
+  .md-main__inner {
+    padding-inline: 20px;
+  }
+
+  .md-content__inner {
+    padding: 28px 0 56px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .md-header__inner,
+  .md-main__inner {
+    padding-inline: 24px;
+  }
+
+  .md-header__inner {
+    gap: 8px;
+  }
+
+  .md-search {
+    flex: 1 1 auto;
+  }
+
+  .md-search__form,
+  .md-search__input {
+    width: 100%;
+  }
+
+  .md-content__inner {
+    padding: 24px 0 48px;
+  }
+
+  .md-typeset h1 {
+    font-size: 26px;
+  }
+
+  .md-typeset h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Тема на узких экранах выносит блок кода за колонку текста на 0.8rem
+     в обе стороны — на телефоне блок уезжает под край окна. */
+  .md-content__inner > .highlight {
+    margin-inline: 0;
+  }
+
+  /* Тема расширяет область таблицы на 0.8rem в обе стороны от колонки.
+     На телефоне колонка уже занимает всё поле, и таблица уезжает вбок от
+     текста, поэтому отступ обёртки снимаем. */
+  .md-typeset__scrollwrap,
+  .md-typeset__table {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .md-typeset {
+    font-size: 13.5px;
+  }
+
+  .md-typeset pre {
+    padding: 12px;
+  }
+
+  /* Селекторы повторяют базовые: у .md-typeset table:not([class]) td
+     специфичность выше, иначе переопределение не применится. */
+  .md-typeset th,
+  .md-typeset td,
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 7px 8px;
+  }
+}

@@ -1,0 +1,1891 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="База знаний senkosan.team">
+      
+      
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="troubleshooting.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="/img/icon-orig.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Справочник API - senkosan.team Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"JetBrains Mono";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#справочник-api-senkoauthlinkapi-velocity" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../index.html" title="senkosan.team Wiki" class="md-header__button md-logo" aria-label="senkosan.team Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            senkosan.team Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Справочник API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="senkosan.team Wiki" class="md-nav__button md-logo" aria-label="senkosan.team Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    senkosan.team Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../senkopets/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SenkoPets
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SenkoPets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkopets/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkopets/config.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Основной конфиг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkopets/commands.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Команды и права
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkopets/pets.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Питомцы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkopets/data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и бэкапы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkopets/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы и решения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../senkpbarrier/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    senkpbarrier
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    senkpbarrier
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkpbarrier/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkpbarrier/config.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Основной конфиг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkpbarrier/commands.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Команда и право
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkpbarrier/mechanics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как работает
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkpbarrier/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы и решения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../senkoauthlink/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SenkoAuthLink-Velocity
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SenkoAuthLink-Velocity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkoauthlink/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkoauthlink/config.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Основной конфиг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkoauthlink/commands.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Команды и права
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkoauthlink/mechanics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как работает
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkoauthlink/storage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хранилище и сообщения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senkoauthlink/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы и решения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SenkoAuthLinkAPI-Velocity
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SenkoAuthLinkAPI-Velocity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="api.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#провайдер" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Провайдер
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#авторизация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Авторизация
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Авторизация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SessionManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linkservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LinkService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twofactorservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TwoFactorService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiumchecker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PremiumChecker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiumservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PremiumService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limbogate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LimboGate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#хранилище" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Хранилище
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discord
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#сообщения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сообщения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#модели" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модели
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#события" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        События
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthConfig
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы и решения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#провайдер" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Провайдер
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#авторизация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Авторизация
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Авторизация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SessionManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linkservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LinkService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twofactorservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TwoFactorService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiumchecker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PremiumChecker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiumservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PremiumService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limbogate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LimboGate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#хранилище" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Хранилище
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discord
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#сообщения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сообщения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#модели" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модели
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#события" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        События
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthConfig
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="справочник-api-senkoauthlinkapi-velocity">Справочник API SenkoAuthLinkAPI-Velocity<a class="headerlink" href="#справочник-api-senkoauthlinkapi-velocity" title="Permanent link">&para;</a></h1>
+<p>Всё в пакете <code>com.senkoauhlink.senkoAuthLinkAPI.api</code>. Единая точка входа - <code>SenkoAuthLinkProvider.get()</code>.</p>
+<h2 id="провайдер">Провайдер<a class="headerlink" href="#провайдер" title="Permanent link">&para;</a></h2>
+<p><code>SenkoAuthLinkProvider</code> - синглтон с тринадцатью геттерами. Экземпляр собирает основной плагин и кладёт в статическое поле:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">SenkoAuthLinkProvider</span><span class="w"> </span><span class="nf">get</span><span class="p">();</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setInstance</span><span class="p">(</span><span class="n">SenkoAuthLinkProvider</span><span class="w"> </span><span class="n">provider</span><span class="p">);</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Builder</span><span class="w"> </span><span class="nf">builder</span><span class="p">();</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Геттер</th>
+<th>Тип</th>
+<th>Кто кладёт в провайдер</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getAuthManager()</code></td>
+<td><code>api.auth.AuthManager</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getAuthService()</code></td>
+<td><code>api.auth.AuthService</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getSessionManager()</code></td>
+<td><code>api.auth.SessionManager</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getPlayerRepository()</code></td>
+<td><code>api.storage.PlayerRepository</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getBanService()</code></td>
+<td><code>api.storage.BanService</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getLinkRepository()</code></td>
+<td><code>api.storage.LinkRepository</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getDiscordManager()</code></td>
+<td><code>api.discord.DiscordManager</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getPremiumChecker()</code></td>
+<td><code>api.auth.PremiumChecker</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getEventManager()</code></td>
+<td><code>api.event.EventManager</code></td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>getTwoFactorService()</code></td>
+<td><code>api.auth.TwoFactorService</code></td>
+<td><strong>нет, всегда <code>null</code></strong></td>
+</tr>
+<tr>
+<td><code>getLinkService()</code></td>
+<td><code>api.auth.LinkService</code></td>
+<td><strong>нет, всегда <code>null</code></strong></td>
+</tr>
+<tr>
+<td><code>getLimboGate()</code></td>
+<td><code>api.auth.LimboGate</code></td>
+<td><strong>нет, всегда <code>null</code></strong></td>
+</tr>
+<tr>
+<td><code>getPremiumService()</code></td>
+<td><code>api.auth.PremiumService</code></td>
+<td><strong>нет, всегда <code>null</code></strong></td>
+</tr>
+</tbody>
+</table>
+<p><code>builder()</code> требует заполнить только шесть первых полей, остальные можно не передавать - поэтому четыре сервиса выше и остаются <code>null</code>. Что с ними делать, написано в <a href="troubleshooting.html">Проблемы и решения</a>.</p>
+<h2 id="авторизация">Авторизация<a class="headerlink" href="#авторизация" title="Permanent link">&para;</a></h2>
+<h3 id="authmanager">AuthManager<a class="headerlink" href="#authmanager" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="nf">isAuthed</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">handlePreLogin</span><span class="p">(</span><span class="n">PreLoginEvent</span><span class="w"> </span><span class="n">event</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">handleLogin</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">onDisconnect</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">purgePremiumAuth</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">purgeTwoFactor</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
+</code></pre></div>
+<p>Из этих методов стороннему плагину полезен только <code>isAuthed</code>. Остальные - обработчики событий Velocity, которые основной плагин вызывает сам; вызывать их из своего кода не нужно.</p>
+<h3 id="authservice">AuthService<a class="headerlink" href="#authservice" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password2</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">logout</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">changePassword</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">oldPassword</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">newPassword1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">newPassword2</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setLang</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lang</span><span class="p">);</span>
+</code></pre></div>
+<p>Реализация в основном плагине - это тот же <code>AuthManager</code>, который обслуживает команды. Через API можно зарегистрировать или авторизовать игрока программно. Ответов эти методы не возвращают: результат приходит игроку в чат.</p>
+<h3 id="sessionmanager">SessionManager<a class="headerlink" href="#sessionmanager" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">PlayerSession</span><span class="w"> </span><span class="nf">createSession</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ipv6PrefixLength</span><span class="p">);</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">PlayerSession</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getSession</span><span class="p">(</span><span class="n">UUID</span><span class="w"> </span><span class="n">playerUUID</span><span class="p">);</span>
+<span class="n">Collection</span><span class="o">&lt;</span><span class="n">PlayerSession</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getAllSessions</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">removeSession</span><span class="p">(</span><span class="n">UUID</span><span class="w"> </span><span class="n">playerUUID</span><span class="p">);</span>
+<span class="kt">long</span><span class="w"> </span><span class="nf">countByIp</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">onlyUnauthed</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ipv6PrefixLength</span><span class="p">);</span>
+<span class="n">Long</span><span class="w"> </span><span class="nf">getIpCooldown</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ipv6PrefixLength</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setIpCooldown</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">untilMillis</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ipv6PrefixLength</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">clearIpCooldown</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ipv6PrefixLength</span><span class="p">);</span>
+<span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">normalizedIp</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">raw</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ipv6PrefixLength</span><span class="p">);</span>
+<span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">addressOf</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+</code></pre></div>
+<p>Последние два метода статические, продублированы в <code>SessionManagerUtil</code>. <code>normalizedIp</code> обрезает IPv6 до префикса, <code>addressOf</code> возвращает адрес игрока.</p>
+<h3 id="linkservice">LinkService<a class="headerlink" href="#linkservice" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">startLink</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">unlinkDiscord</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">verifyLink</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">discordUserId</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="twofactorservice">TwoFactorService<a class="headerlink" href="#twofactorservice" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">enable2FA</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">disable2FA</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">confirm2FAHere</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">confirm2FA</span><span class="p">(</span><span class="n">UUID</span><span class="w"> </span><span class="n">playerUUID</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">discordUserId</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">deny2FA</span><span class="p">(</span><span class="n">UUID</span><span class="w"> </span><span class="n">playerUUID</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">discordUserId</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="premiumchecker">PremiumChecker<a class="headerlink" href="#premiumchecker" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">CompletableFuture</span><span class="o">&lt;</span><span class="n">PremiumInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">isPremium</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="n">PremiumInfo</span><span class="w"> </span><span class="nf">isPremiumSync</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</code></pre></div>
+<p><code>isPremiumSync</code> - это <code>isPremium(...).join()</code>, то есть блокирующий вызов на сетевом запросе к Mojang. Вызывать его нужно не в основном потоке событий.</p>
+<h3 id="premiumservice">PremiumService<a class="headerlink" href="#premiumservice" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">confirmPremium</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password2</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">unlinkPremium</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">isPremiumEnabled</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="limbogate">LimboGate<a class="headerlink" href="#limbogate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="nf">isAvailable</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">hold</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">release</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">release</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">RegisteredServer</span><span class="w"> </span><span class="n">target</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">onDisconnect</span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="хранилище">Хранилище<a class="headerlink" href="#хранилище" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1">// PlayerRepository</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">PlayerAccount</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">PlayerAccount</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByDiscordId</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">discordId</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">exists</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="n">PlayerAccount</span><span class="w"> </span><span class="n">account</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">updatePassword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">passwordHash</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setPremium</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">premium</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">premiumUuid</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setDiscord</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">discordId</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setLang</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lang</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setTwoFactor</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">enabled</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">touchLogin</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">count</span><span class="p">();</span>
+
+<span class="c1">// BanService</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">Ban</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getBan</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">ban</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">reason</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">bannedAt</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">expiresAt</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">unban</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+
+<span class="c1">// LinkRepository</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">insertPending</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">createdAt</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">expiresAt</span><span class="p">);</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">PendingLink</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findPending</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">code</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">deletePending</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">code</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">deletePendingByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">purgeExpiredLinks</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
+</code></pre></div>
+<p>Все три интерфейса реализует один класс основного плагина, поэтому фактически это один и тот же объект. Методы синхронизированы, исключения при ошибках базы бросаются как <code>RuntimeException</code>.</p>
+<p>Осторожно с <code>create(PlayerAccount)</code>: модель требует непустые <code>username</code>, <code>uuid</code> и <code>passwordHash</code>, иначе будет <code>IllegalStateException</code>. Хеш пароля нужно передавать уже готовым bcrypt - в API нет метода, который его посчитает.</p>
+<h2 id="discord">Discord<a class="headerlink" href="#discord" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">plugin</span><span class="p">,</span><span class="w"> </span><span class="n">ProxyServer</span><span class="w"> </span><span class="n">proxy</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">();</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">isMemberOk</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">discordId</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">notifyLogin</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ip</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">notifyUnlink</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">discordId</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">sendTwoFactorRequest</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">discordId</span><span class="p">,</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">playerName</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ip</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">isEnabled</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setTwoFactorHandler</span><span class="p">(</span><span class="n">TwoFactorHandler</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span>
+
+<span class="kd">interface</span> <span class="nc">TwoFactorHandler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">confirm</span><span class="p">(</span><span class="n">UUID</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">discordUserId</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">deny</span><span class="p">(</span><span class="n">UUID</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">discordUserId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>start</code> и <code>setTwoFactorHandler</code> основной плагин вызывает сам, повторный вызов будет лишним. Обращения к Discord, когда <code>isEnabled()</code> возвращает <code>false</code>, ничего не делают.</p>
+<h2 id="сообщения">Сообщения<a class="headerlink" href="#сообщения" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="nf">plain</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lang</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">placeholders</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="nf">plain</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lang</span><span class="p">);</span>
+<span class="n">Component</span><span class="w"> </span><span class="nf">msg</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">placeholders</span><span class="p">);</span>
+<span class="n">Component</span><span class="w"> </span><span class="nf">msg</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="nf">getPrefix</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">lang</span><span class="p">);</span>
+</code></pre></div>
+<p>Ключи и подстановки - как в основном плагине, список групп в разделе <a href="../senkoauthlink/storage.html">Хранилище и сообщения</a>. <code>msg</code> сам подставит язык игрока и префикс, <code>plain</code> требует язык явно.</p>
+<h2 id="модели">Модели<a class="headerlink" href="#модели" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Класс</th>
+<th>Что это</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AuthState</code></td>
+<td>enum: <code>NEW</code>, <code>PENDING_REGISTER</code>, <code>PENDING_LOGIN</code>, <code>PENDING_2FA</code>, <code>AUTHENTICATED</code></td>
+</tr>
+<tr>
+<td><code>PlayerAccount</code></td>
+<td>неизменяемый аккаунт, собирается через <code>builder()</code>: ник, uuid, хеш пароля, флаг и uuid лицензии, Discord ID, флаг 2FA, язык, времена регистрации и последнего входа, прошлый IP</td>
+</tr>
+<tr>
+<td><code>PlayerSession</code></td>
+<td>снимок сессии: uuid, ник, IP, статус, число попыток, язык, запрошенный сервер, время запроса. Есть <code>isAuthenticated()</code> и <code>isPendingAuth()</code></td>
+</tr>
+<tr>
+<td><code>PremiumInfo</code></td>
+<td>record из трёх полей: <code>known</code>, <code>premium</code>, <code>uuid</code>. <code>known</code> означает, что ответ Mojang получен и разобран, а не что ник лицензионный</td>
+</tr>
+<tr>
+<td><code>Ban</code></td>
+<td>ник, причина, время бана, время окончания. <code>isPermanent()</code> и <code>isExpired()</code> считают вечность как <code>expiresAt &lt;= 0</code></td>
+</tr>
+<tr>
+<td><code>PendingLink</code></td>
+<td>код, ник, когда выдан, когда истечёт, и <code>isExpired()</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="события">События<a class="headerlink" href="#события" title="Permanent link">&para;</a></h2>
+<p>Классы событий лежат в <code>api.event</code>: <code>AuthEvent</code>, <code>LoginEvent</code>, <code>RegisterEvent</code>, <code>LogoutEvent</code>, <code>DisconnectEvent</code>, <code>BanEvent</code>, <code>LinkEvent</code>, <code>TwoFactorEvent</code>. У всех одинаковая форма - конструктор с <code>Player</code> и данными, геттеры без сеттеров.</p>
+<p><code>EventManager</code> - минимальный диспетчер на <code>ConcurrentHashMap</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">eventClass</span><span class="p">,</span><span class="w"> </span><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span>
+<span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">unregister</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">eventClass</span><span class="p">,</span><span class="w"> </span><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span>
+<span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fire</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">event</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Важно: основной плагин не вызывает <code>fire()</code>.</strong> Ни одного вызова в его коде нет, события не отправляются ни при входе, ни при бане, ни при привязке. Подписка через <code>register</code> - рабочая, но придёт пусто. Подробности в <a href="troubleshooting.html">Проблемы и решения</a>.</p>
+<h2 id="authconfig">AuthConfig<a class="headerlink" href="#authconfig" title="Permanent link">&para;</a></h2>
+<p><code>api.config.AuthConfig</code> - неизменяемый снимок настроек с билдером и 28 полями: требование регистрации, длины пароля, число попыток, таймеры, серверы начального и вороначного, лимиты IP, префикс IPv6, премиум, Discord и язык.</p>
+<p>Значения по умолчанию у него <strong>не совпадают</strong> с <code>config.yml</code> основного плагина:</p>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>В <code>config.yml</code></th>
+<th>В <code>AuthConfig</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>minPasswordLength</code></td>
+<td><code>6</code></td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td><code>maxPlayersPerIp</code></td>
+<td><code>0</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>ipLimitExemptAuth</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>premiumEnabled</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>premiumForceOnlineAuth</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>premiumAuthFallbackMinutes</code></td>
+<td><code>15</code></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>discordLinkCodeLength</code></td>
+<td><code>8</code></td>
+<td><code>6</code></td>
+</tr>
+</tbody>
+</table>
+<p>И главное: <strong>плагин этот класс не собирает</strong>. В его коде нет ни одного упоминания <code>AuthConfig</code>, а в провайдере его нет среди геттеров. Считать по нему реальные настройки нельзя, читайте <code>config.yml</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../assets/embed.js"></script>
+      
+    
+  </body>
+</html>
