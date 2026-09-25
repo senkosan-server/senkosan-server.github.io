@@ -1,1 +1,1 @@
-# -senkosan-server.github.io
+# SenkoSan.team
